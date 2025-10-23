@@ -1,90 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STBS TransLab - Transmission Repairs</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STBS TransLab - Transmission Experts</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; background: #f8f9fa; }
 
-        a { text-decoration: none; color: inherit; }
+/* Navigation */
+nav {
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav a {
+    color: #fff;
+    padding: 18px 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+nav a:hover { background: #007bff; border-radius: 6px; }
 
-        /* Header / Hero Section */
-        header {
-            background: url('https://images.unsplash.com/photo-1581091012184-05726db29b52?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-            padding: 120px 20px;
-        }
-        header h1 { font-size: 3.5em; margin-bottom: 15px; text-shadow: 2px 2px #000; }
-        header p { font-size: 1.3em; text-shadow: 1px 1px #000; }
+/* Header */
+header {
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1581091012184-05726db29b52?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 140px 20px;
+}
+header h1 { font-size: 3.5em; margin-bottom: 15px; text-shadow: 2px 2px 8px rgba(0,0,0,0.7);}
+header p { font-size: 1.5em; text-shadow: 1px 1px 6px rgba(0,0,0,0.6); }
 
-        /* Navigation */
-        nav {
-            background: #1b1b1b;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: white;
-            padding: 15px 25px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        nav a:hover { background: #007bff; color: white; border-radius: 5px; }
+/* Sections */
+section { padding: 70px 20px; max-width: 1100px; margin: auto; }
+section h2 { text-align: center; margin-bottom: 50px; font-size: 2.4em; color: #1a1a1a; font-weight: 700; }
 
-        /* Sections */
-        section { padding: 60px 20px; max-width: 1000px; margin: auto; }
-        section h2 { text-align: center; margin-bottom: 50px; font-size: 2.2em; color: #1b1b1b; }
+/* Services */
+.services { display: flex; flex-wrap: wrap; justify-content: space-around; }
+.service-card {
+    background: #ffffff;
+    border-radius: 16px;
+    width: 320px;
+    margin: 20px;
+    padding: 30px 25px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 5px solid #007bff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+.service-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.2); }
+.service-card h3 { margin-bottom: 20px; color: #007bff; font-size: 1.4em; }
+.service-card i { font-size: 50px; color: #ff6600; margin-bottom: 15px; }
 
-        /* Services */
-        .services { display: flex; flex-wrap: wrap; justify-content: space-around; }
-        .service-card {
-            background: #f5f5f5;
-            border-radius: 12px;
-            width: 300px;
-            margin: 15px;
-            padding: 25px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid #007bff;
-        }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-        .service-card h3 { margin-bottom: 15px; color: #007bff; }
-        .service-card i { font-size: 50px; color: #ff6600; margin-bottom: 15px; }
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #ff6600;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: 0.3s;
+}
+.btn:hover { background: #e65c00; }
 
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            background: #ff6600;
-            color: white;
-            padding: 10px 25px;
-            border-radius: 6px;
-            margin-top: 15px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .btn:hover { background: #e65c00; }
+/* Contact */
+.contact-info p { margin-bottom: 12px; font-weight: 600; color: #1a1a1a; }
+.hours { margin-top: 20px; text-align: center; }
+.hours table { margin: auto; border-collapse: collapse; }
+.hours th, .hours td { padding: 10px 20px; border: 1px solid #ddd; font-weight: 500; }
 
-        /* Contact */
-        .contact-info p { margin-bottom: 12px; font-weight: bold; }
-        .hours { margin-top: 20px; text-align: center; }
-        .hours table { margin: auto; border-collapse: collapse; }
-        .hours th, .hours td { padding: 8px 15px; border: 1px solid #ddd; }
+/* Footer */
+footer { background: #1a1a1a; color: white; text-align: center; padding: 25px; font-size: 0.95em; }
 
-        /* Footer */
-        footer { background: #1b1b1b; color: white; text-align: center; padding: 20px; margin-top: 40px; }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .services { flex-direction: column; align-items: center; }
-            header h1 { font-size: 2.5em; }
-        }
-    </style>
+/* Responsive */
+@media (max-width: 992px) {
+    .services { flex-direction: column; align-items: center; }
+    header h1 { font-size: 2.8em; }
+    header p { font-size: 1.3em; }
+}
+</style>
 </head>
 <body>
 
@@ -102,7 +107,7 @@
 
 <section id="home">
     <h2>Welcome to STBS TransLab</h2>
-    <p style="text-align:center; font-size:1.1em;">We specialize in Jatco CVTs (JF011E, JF015E), DSG (DQ200, DQ250), and DPS6 transmissions. Fast, reliable, and certified repair for your vehicle.</p>
+    <p style="text-align:center; font-size:1.2em; color:#555;">We specialize in Jatco CVTs (JF011E, JF015E), DSG (DQ200, DQ250), and DPS6 transmissions. Fast, reliable, and certified repair for your vehicle. Quality service with guaranteed satisfaction.</p>
 </section>
 
 <section id="services">
@@ -131,7 +136,7 @@
 
 <section id="about">
     <h2>About STBS TransLab</h2>
-    <p style="text-align:center; font-size:1.1em;">STBS TransLab is a certified transmission repair shop with years of hands-on experience. Our technicians specialize in CVTs, DSG, and DPS6 transmissions, ensuring top performance and reliability. Fast, professional service with customer satisfaction guaranteed.</p>
+    <p style="text-align:center; font-size:1.2em; color:#555;">STBS TransLab is a certified transmission repair shop with years of hands-on experience. Our technicians specialize in CVTs, DSG, and DPS6 transmissions, ensuring top performance and reliability. Fast, professional service with customer satisfaction guaranteed.</p>
 </section>
 
 <section id="contact">
@@ -139,7 +144,7 @@
     <div class="contact-info" style="text-align:center;">
         <p><i class="fas fa-map-marker-alt"></i> Unit 15, Cromwell Industrial Estate, Staffa Road, Leyton, London E10 7QZ</p>
         <p><i class="fas fa-phone"></i> 07778 539876</p>
-        <p><i class="fas fa-envelope"></i> Basitali2001b@gmail.com</p>
+        <p><i class="fas fa-envelope"></i> info@stbstranslab.com</p>
 
         <div class="hours">
             <h3>Opening Hours</h3>
@@ -154,8 +159,7 @@
             </table>
         </div>
 
-        <!-- Google Maps Embed -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.643028358158!2d0.0019735158412216596!3d51.56497737963107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761c855a08b14f%3A0xf6e7b2b22a5e6a1d!2sCromwell%20Industrial%20Estate%2C%20Staffa%20Rd%2C%20London%20E10%207QZ!5e0!3m2!1sen!2suk!4v1698112345678!5m2!1sen!2suk" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.643028358158!2d0.0019735158412216596!3d51.56497737963107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761c855a08b14f%3A0xf6e7b2b22a5e6a1d!2sCromwell%20Industrial%20Estate%2C%20Staffa%20Rd%2C%20London%20E10%207QZ!5e0!3m2!1sen!2suk!4v1698112345678!5m2!1sen!2suk" width="100%" height="300" style="border:0; margin-top:20px;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 </section>
 
